@@ -631,6 +631,12 @@ footer a:hover {
   .navbar-nav {
     margin: 0 0 1rem !important;
   }
+  .navbar-collapse .nav-link.active {
+    color: #000;
+  }
+  body[data-theme="dark"] .navbar-collapse .nav-link.active {
+    color: #fff;
+  }
   .nav-actions {
     justify-content: space-between;
   }

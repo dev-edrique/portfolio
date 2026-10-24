@@ -7,11 +7,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeLabel = themeToggle.querySelector(".theme-label");
   const heroPortrait = document.getElementById("heroPortrait");
   const revealPage = () => document.body.classList.remove("is-loading");
+  const navigationSections = Array.from(navLinks)
+    .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
+    .filter(({ section }) => section);
 
   document.getElementById("year").textContent = new Date().getFullYear();
   const updateNavigation = () => navbar.classList.toggle("scrolled", window.scrollY > 18);
   updateNavigation();
   window.addEventListener("scroll", updateNavigation, { passive: true });
+
+  const updateActiveNavigation = () => {
+    const viewportMarker = window.scrollY + (window.innerHeight * 0.3);
+    let activeLink = null;
+
+    navigationSections.forEach(({ link, section }) => {
+      if (section.offsetTop <= viewportMarker) activeLink = link;
+    });
+
+    navLinks.forEach((link) => link.classList.toggle("active", link === activeLink));
+  };
+
+  updateActiveNavigation();
+  window.addEventListener("scroll", updateActiveNavigation, { passive: true });
+  window.addEventListener("resize", updateActiveNavigation);
 
   const savedTheme = localStorage.getItem("portfolio-theme");
   const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
