@@ -27,6 +27,51 @@ body {
   font-family: "Manrope", sans-serif;
   overflow-x: hidden;
 }
+body.is-loading {
+  overflow: hidden;
+}
+body.is-loading nav,
+body.is-loading main,
+body.is-loading footer,
+body.is-loading .page-glow {
+  opacity: 0;
+  visibility: hidden;
+}
+.page-loader {
+  align-items: center;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+  z-index: 2000;
+}
+.loader-spinner {
+  animation: spinner-rotate 0.8s linear infinite;
+  border: 3px solid var(--line);
+  border-radius: 50%;
+  border-top-color: var(--lime);
+  height: 2.15rem;
+  width: 2.15rem;
+}
+.page-loader p {
+  color: var(--ink-soft);
+  font-family: "DM Mono", monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  margin: 0.8rem 0 0;
+  text-transform: uppercase;
+}
+body:not(.is-loading) .page-loader {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+@keyframes spinner-rotate {
+  to { transform: rotate(360deg); }
+}
 ::selection {
   background: var(--lime);
   color: var(--ink);
@@ -640,6 +685,9 @@ footer a:hover {
   }
   .focus-card {
     transition: none;
+  }
+  .loader-spinner {
+    animation: none;
   }
 }
 

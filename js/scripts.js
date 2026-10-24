@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("themeToggle");
   const themeIcon = themeToggle.querySelector(".theme-icon");
   const themeLabel = themeToggle.querySelector(".theme-label");
+  const heroPortrait = document.getElementById("heroPortrait");
+  const revealPage = () => document.body.classList.remove("is-loading");
 
   document.getElementById("year").textContent = new Date().getFullYear();
   const updateNavigation = () => navbar.classList.toggle("scrolled", window.scrollY > 18);
@@ -22,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     themeLabel.textContent = isDark ? "Light" : "Dark";
   };
   applyTheme(savedTheme || preferredTheme);
+
+  if (heroPortrait.complete) {
+    revealPage();
+  } else {
+    heroPortrait.addEventListener("load", revealPage, { once: true });
+    heroPortrait.addEventListener("error", revealPage, { once: true });
+  }
 
   themeToggle.addEventListener("click", () => {
     const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";

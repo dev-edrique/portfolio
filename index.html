@@ -12,7 +12,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+  <body class="is-loading" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+    <div id="pageLoader" class="page-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+      <div class="loader-spinner" aria-hidden="true"></div>
+      <p>Loading portfolio</p>
+    </div>
     <div class="page-glow glow-one"></div>
     <div class="page-glow glow-two"></div>
     <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
@@ -38,7 +42,7 @@
               <div class="d-flex flex-wrap gap-3 reveal-item"><a class="btn btn-primary btn-lg rounded-pill" href="#work">My skills <i class="bi bi-arrow-down-right"></i></a><a class="btn btn-link text-decoration-none px-2" href="#contact">Contact Me <i class="bi bi-arrow-down-right"></i></a></div>
             </div>
             <div class="col-lg-4">
-              <div class="portrait-card reveal-item"><img src="assets/justin-reyes.jpg" alt="Justin Edrique Reyes" />
+              <div class="portrait-card reveal-item"><img id="heroPortrait" src="assets/justin-reyes.jpg" alt="Justin Edrique Reyes" />
                 <div class="portrait-card-meta"><span>Justin Edrique Reyes</span><span>Web Developer</span></div>
               </div>
             </div>
