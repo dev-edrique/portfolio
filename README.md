@@ -1,13 +1,13 @@
-# Justin Edrique Reyes - Portfolio
+# Portfolio Website
 
-A responsive personal portfolio for Justin Edrique Reyes, a Web Developer at Pilipinas Micro-Matrix Technology, Inc. (PMTI). The site presents professional experience, education, technical skills, and contact details in a modern single-page layout.
+A responsive, single-page portfolio website built with Bootstrap. It provides a modern structure for presenting a professional profile, experience, technical skills, and contact information.
 
 ## Highlights
 
 - Responsive, Bootstrap-powered single-page experience
 - Light and dark themes with a persistent header toggle
 - Custom navy, teal, and coral visual system
-- Professional hero portrait and resume-based content
+- Professional hero section with portrait support
 - Experience, education, skills, and contact sections
 - Accessible navigation, semantic markup, and reduced-motion support
 
@@ -25,7 +25,7 @@ A responsive personal portfolio for Justin Edrique Reyes, a Web Developer at Pil
 ```text
 portfolio/
 ├── assets/
-│   └── justin-reyes.jpg       # Header portrait
+│   └── <profile-image>.jpg    # Header portrait
 ├── css/
 │   └── styles.css             # Site styles, palette, responsive rules, themes
 ├── js/
@@ -46,7 +46,7 @@ This is a static site, so no build step or package installation is required.
 Most portfolio content lives in `index.html`.
 
 - Update professional information, skills, and contact details in the relevant sections.
-- Replace the hero image at `assets/justin-reyes.jpg` and retain the same filename, or update the image path in `index.html`.
+- Replace the image in the `assets/` folder and update its path in `index.html` if needed.
 - Adjust the theme colors at the top of `css/styles.css`.
 - The light/dark preference is saved in the browser under `portfolio-theme`.
 
@@ -57,9 +57,3 @@ Most portfolio content lives in `index.html`.
 | Navy / primary | `#001730` |
 | Teal / interactive accent | `#4ad7d1` |
 | Coral / featured accent | `#fe4a49` |
-
-## Contact
-
-Justin Edrique Reyes<br>
-Web Developer, PMTI<br>
-[dev.edrique@gmail.com](mailto:dev.edrique@gmail.com)
